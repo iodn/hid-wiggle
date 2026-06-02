@@ -1,0 +1,63 @@
+HIDWiggle turns a supported rooted Android device into a real USB HID mouse and sends controlled pointer movement to keep a connected host session awake.
+
+It uses Linux USB Gadget / ConfigFS on the Android side, so the host sees an actual USB mouse rather than a software-only wake timer. The app is built for local, privacy-respecting operation: no accounts, no tracking, no ads, and no locked features.
+
+### Mouse jiggler modes
+
+Choose from several movement patterns and tune them for the connected system:
+
+* **Micro-wiggle** for tiny low-drift movement
+* **Random drift** for natural-looking motion with inertia
+* **Square** for a compact loop
+* **Figure-8** for continuous visible movement
+* **Pulse** for short bursts with micro-pauses
+
+Each mode supports live tuning for movement interval, amplitude, jitter, randomness, and human-like variation. The preview mirrors the movement behavior used by the active jiggler.
+
+### Scheduling and automation
+
+HIDWiggle includes practical controls for when movement is allowed:
+
+* Day/time windows
+* Optional auto-stop timer
+* Pause when the screen is off
+* Pause when battery is low
+
+These rules help keep the app predictable during longer sessions.
+
+### USB gadget configuration
+
+Configure the USB identity used by the mouse gadget:
+
+* Vendor ID and Product ID
+* Manufacturer and product strings
+* Serial number
+* Max power
+
+An embedded USB IDs database is available to help inspect common vendor/product identifiers.
+
+### Test mode
+
+Test Mode enables the mouse gadget without automatic movement. You can manually send HID reports for movement, clicks, and scroll actions to verify that the host sees and accepts the Android device as a mouse.
+
+### Diagnostics and logs
+
+The diagnostics views expose the details that matter for USB gadget troubleshooting:
+
+* Root availability
+* USB gadget / ConfigFS support
+* UDC discovery
+* Active gadget state
+* HID device readiness
+* Native backend log stream
+
+### Requirements
+
+* **Root permissions are required**
+* A physical Android device is required
+* The device kernel must support USB Gadget and ConfigFS
+* A USB Device Controller must be exposed by the device
+* HID gadget nodes such as `/dev/hidg*` must be available when the gadget is active
+* A data-capable USB cable is required
+
+HIDWiggle is intended for systems you own or are authorized to use. Activating a USB gadget changes how the Android device presents itself over USB and may affect ADB, charging, or other USB functions while active.
