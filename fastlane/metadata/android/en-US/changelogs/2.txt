@@ -1,0 +1,13 @@
+<h3>Changelog (v1.0)</h3>
+
+<ul>
+  <li>Initial HIDWiggle release</li>
+  <li>Root-based USB HID mouse gadget activation through Linux ConfigFS</li>
+  <li>Mouse jiggler dashboard with start/stop controls and live gadget status</li>
+  <li>Movement modes: Micro-wiggle, Random drift, Square, Figure-8, and Pulse</li>
+  <li>Live tuning for interval, amplitude, jitter, randomness, and human-like variation</li>
+  <li>Scheduler with day/time windows, auto-stop, and pause rules</li>
+  <li>USB identity settings for VID/PID, manufacturer, product, serial, and max power</li>
+  <li>Test Mode for manual HID movement, click, and scroll validation</li>
+  <li>Diagnostics and native logs for root, UDC, ConfigFS, and HID readiness troubleshooting</li>
+</ul>
